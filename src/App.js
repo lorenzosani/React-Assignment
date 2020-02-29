@@ -1,32 +1,33 @@
-import React, { Component } from 'react';
-import { request } from 'graphql-request';
-import Histogram from './Components/Histogram'
-import './App.css';
+import React, { Component } from "react";
+import { request } from "graphql-request";
+import MonthlyPostsHistogram from "./Components/MonthlyPostsHistogram";
+import "./App.css";
 
 class App extends Component {
-
   state = {
     posts: {}
-  }
+  };
 
   componentDidMount() {
     const query = `{
-      allPosts(count: 1000) {
+      allPosts(count: 5000) {
         createdAt
       }
     }`;
-    request('https://fakerql.nplan.io/graphql', query)
-    .then((data) => {
-      this.setState({ posts: data })
-    })
-    .catch(console.log)
+    request("https://fakerql.nplan.io/graphql", query)
+      .then(data => {
+        this.setState({ posts: data });
+      })
+      .catch(console.log);
   }
 
-  render(){
+  render() {
     return (
       <div className="App">
-        <header className="App-header">Number of posts per month</header>
-        <Histogram posts={this.state.posts}/>
+        <div class="container text-center p-5">
+          <h1 className="App-header text-dark">Number of posts per month</h1>
+          <MonthlyPostsHistogram posts={this.state.posts} />
+        </div>
       </div>
     );
   }
