@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { request } from 'graphql-request';
+import Histogram from './Components/Histogram'
 import './App.css';
 
 class App extends Component {
@@ -24,9 +25,8 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <header className="App-header">
-          <p>nPlan App</p>
-        </header>
+        <header className="App-header">Number of posts per month</header>
+        <Histogram posts={this.state.posts}/>
       </div>
     );
   }
