@@ -14,7 +14,7 @@ export default class MonthlyPostsHistogram extends Component {
   componentDidUpdate(prevProps) {
     let posts = this.props.posts.allPosts;
     let months = [];
-    let months_data = this.getMonthlyPosts(posts, 2019);
+    let months_data = this.getMonthlyPosts(posts, this.props.year);
     let months_labels = [
       "January",
       "February",
@@ -59,7 +59,7 @@ export default class MonthlyPostsHistogram extends Component {
   render() {
     return (
       <div className="Histogram card p-5 mt-5 border-0 shadow">
-        <VXBars data={this.state.months} height={500} width={1000} />
+        <VXBars data={this.state.months} height={this.props.height} width={this.props.width} />
       </div>
     );
   }

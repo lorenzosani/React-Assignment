@@ -26,7 +26,7 @@ class App extends Component {
       <div className="App">
         <div class="container text-center p-5">
           <h1 className="App-header text-dark">Number of posts per month</h1>
-          <MonthlyPostsHistogram posts={this.state.posts} />
+          <MonthlyPostsHistogram posts={this.state.posts} width={1000} height={500} year={2019}/>
         </div>
       </div>
     );
