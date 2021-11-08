@@ -9,7 +9,7 @@
     "@vx/axis": "^0.0.195",
     "@vx/gradient": "^0.0.195",
     "@vx/scale": "^0.0.195",
-    "graphiql": "^0.17.5",
+    "graphiql": "^1.4.7",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
